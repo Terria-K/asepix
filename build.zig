@@ -5,6 +5,8 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    _ = b.addModule("asepix", .{ .root_source_file = b.path("src/root.zig") });
+
 
     const lib = b.addStaticLibrary(.{
         .name = "asepix",
